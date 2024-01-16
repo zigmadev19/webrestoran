@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from '../images/about-image.jpg';
+
+---
+
+<section id="about" class="py-24">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 lg:gap-24">
+        <dv class="space-y-6 text-gray-600">
+            <div class="space-y-2">
+                <p class="text-xs tracking-widest">READ OUR STORY</p>
+                <h2 class="text-3xl font-bold text-black">We've been Making The Delicious Foods Since 1999</h2>
+            </div>
+
+            <div class="space-y-2">
+                <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>
+                <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about templatemo. Thank you.</p>
+            </div>
+        </dv>
+        <div>
+            <Image src={aboutImg} alt="about us" />
+        </div>
+    </div>
+</section>

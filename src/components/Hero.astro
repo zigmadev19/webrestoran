@@ -1,0 +1,70 @@
+---
+import { getImage } from "astro:assets";
+
+import slide1 from '../images/slider-image1.jpg';
+import slide2 from '../images/slider-image2.jpg';
+import slide3 from '../images/slider-image3.jpg';
+
+const img1 = await getImage({src: slide1, format: 'webp'});
+const img2 = await getImage({src: slide2, format: 'webp'});
+const img3 = await getImage({src: slide3, format: 'webp'});
+---
+
+<section id="hero" class="splide" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide bg-left-bottom bg-cover bg-no-repeat relative before:absolute before:content-[''] before:top-0 before:left-0 before:w-full before:h-full before:z-10 before:bg-[rgba(0,0,0,.3)]" style={`background-image: url(${img1.src});`}>
+                <div class="relative z-20 max-w-6xl px-4 h-screen xl:max-h-[800px] mx-auto flex items-center" >
+                    <div class="text-white max-w-sm md:max-w-md lg:max-w-2xl">
+                        <div class="space-y-4 mb-8 font-bold">
+                            <h3 class="text-md tracking-widest">Eatery Cafe &amp; Restaurant</h3>
+                            <h1 class="text-3xl lg:text-5xl">Our mission is to provide an unforgettable experience</h1>
+                        </div>
+
+                        <a class="py-2 px-4 bg-red-500 text-white hover:bg-white hover:text-black ease-out duration-300" href="#chef">Meet Our Chef</a>
+                    </div>
+                </div>
+			</li>
+			<li class="splide__slide bg-top bg-cover bg-no-repeat relative before:absolute before:content-[''] before:top-0 before:left-0 before:w-full before:h-full before:z-10 before:bg-[rgba(0,0,0,.3)]" style={`background-image: url(${img2.src});`}>
+                <div class="relative z-20 max-w-6xl px-4 h-screen xl:max-h-[800px] mx-auto flex items-center" >
+                    <div class="text-white max-w-sm md:max-w-md lg:max-w-2xl">
+                        <div class="space-y-4 mb-8 font-bold">
+                            <h3 class="text-md tracking-widest">Eatery Cafe &amp; Restaurant</h3>
+                            <h1 class="text-3xl lg:text-5xl">Our mission is to provide an unforgettable experience</h1>
+                        </div>
+
+                        <a class="py-2 px-4 bg-red-500 text-white hover:bg-white hover:text-black ease-out duration-300" href="#chef">Meet Our Chef</a>
+                    </div>
+                </div>
+			</li>
+			<li class="splide__slide bg-top-center bg-cover bg-no-repeat relative before:absolute before:content-[''] before:top-0 before:left-0 before:w-full before:h-full before:z-10 before:bg-[rgba(0,0,0,.3)]" style={`background-image: url(${img3.src});`}>
+                <div class="relative z-20 max-w-6xl px-4 h-screen xl:max-h-[800px] mx-auto flex items-center" >
+                    <div class="text-white max-w-sm md:max-w-md lg:max-w-2xl">
+                        <div class="space-y-4 mb-8 font-bold">
+                            <h3 class="text-md tracking-widest">Eatery Cafe &amp; Restaurant</h3>
+                            <h1 class="text-3xl lg:text-5xl">Our mission is to provide an unforgettable experience</h1>
+                        </div>
+
+                        <a class="py-2 px-4 bg-red-500 text-white hover:bg-white hover:text-black ease-out duration-300" href="#chef">Meet Our Chef</a>
+                    </div>
+                </div>
+			</li>
+		</ul>
+  </div>
+</section>
+
+ <script>
+  let hero = new Splide( '#hero', {
+        type: 'loop',
+        arrows             : false,
+        paginationDirection: 'ttb',
+        autoplay: true,
+        interval: 3000,
+        classes: {
+            // Add classes for pagination.
+            pagination: 'splide__pagination', // container
+            page      : 'splide__pagination__page bg-white active:bg-red-500', // each button
+        },
+    });
+  hero.mount();
+</script>

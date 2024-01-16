@@ -1,0 +1,97 @@
+---
+import Menu from '../icon/Menu.astro';
+
+const menus = [
+{
+    text: 'Home',
+    url: '/'
+},
+{
+    text: 'About US',
+    url: '#about'
+},
+{
+    text: 'Chef',
+    url: '#chef'
+},
+{
+    text: 'Menu',
+    url: '#menu'
+},
+{
+    text: 'Contact',
+    url: '#contact'
+}
+]
+---
+
+<header data-header="header" class="py-4 lg:py-8 bg-white text-black lg:bg-transparent lg:text-white fixed top-0 left-0 w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center flex-wrap">
+        <a href="/">
+            <span class="sr-only">logo</span>
+            <span class="text-xl font-bold">Restaurant</span>
+        </a>
+
+        <button data-toggle="button-toggle" class="border p-2 rounded lg:hidden"><span class="sr-only">menu</span> <Menu /></button>
+
+        <nav class="lg:flex gap-28 hidden">
+            <ul class="flex gap-8 font-bold">
+                {
+                    menus.map( m => (
+                        <li><a class="hover:text-red-500" href={m.url}>{m.text}</a></li>
+                    ))
+                }
+            </ul>
+
+            <div class="space-x-4">
+                <a href="/" class ="text-sm font-bold hover:text-red-600">Call Now! +62 8976 9876 987</a>
+                <a href="/" class="py-2 px-4 bg-red-500 text-white hover:bg-white hover:text-black ease-out duration-300">Reseved a Table</a>
+            </div>
+        </nav>
+    </div>
+    <div data-menu="menu-mobile" class="hidden mx-w-lg mx-auto p-8">
+        <nav class="flex flex-col items-center gap-4">
+            <ul class="flex flex-col items-center gap-2">
+                {
+                    menus.map( m => (
+                        <li><a data-link="menu-link" class="hover:text-red-500" href={m.url}>{m.text}</a></li>
+                    ))
+                }
+            </ul>
+
+            <div class="flex flex-col items-center space-y-2">
+                <a href="/" class ="text-md hover:text-red-500">Call Now! +62 8976 9876 987</a>
+                <a href="/" class="py-2 px-4 bg-red-500 text-white w-fit hover:bg-white hover:text-black ease-out duration-300">Reseved a Table</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script >
+    const btn = document.querySelector('[data-toggle="button-toggle"]');
+    const menu = document.querySelector('[data-menu="menu-mobile"]');
+    const header = document.querySelector('[data-header="header"]');
+    let itemLink = document.querySelectorAll('[data-link="menu-link"]');
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >= 10) {
+            header.classList.remove("lg:bg-transparent","lg:text-white");
+            header.classList.add("lg:bg-white","lg:text-black","shadow-xl");
+        }
+        else {
+            header.classList.remove("lg:bg-white","lg:text-black","shadow-xl");
+            header.classList.add("lg:bg-transparent","lg:text-white");
+        }
+    });
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+    for (let i = 0; i < itemLink.length; i++) {
+        itemLink[i].addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    }
+</script>
+

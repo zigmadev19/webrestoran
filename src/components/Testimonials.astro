@@ -1,0 +1,66 @@
+---
+import { getImage } from "astro:assets";
+import testBg from "../images/testimonial-bg.jpg"
+const testimonialBg = await getImage({src: testBg, format: 'webp'})
+---
+<section class="py-32 relative overflow-hidden bg-center bg-cover bg-scroll before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[rgba(0,0,0,.6)]" style={`background-image: url(${testimonialBg.src});`}>
+    <div class="relative text-white space-y-8 text-center z-10 max-w-2xl mx-auto px-4 lg:px-0">
+        <h2 class="text-3xl font-bold">Testimonials</h2>
+
+        <div id="testimonial" class="splide" role="group" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="space-y-8 text-gray-300">
+                                <p class="text-2xl leading-loose">Lorem ipsum dolor sit amet, consectetur Offidistinctio eius delectus officia in ad quaerat praesentium illum.</p>
+
+                                <div class="flex items-center justify-center gap-2">
+                                    <span class="font-bold text-xl">Jhoe Doe</span>
+                                    <span>Lorem ipsum dolor.</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="space-y-8 text-gray-300">
+                                <p class="text-2xl leading-loose">consectetur adipisicing elit. Officiis nam cupiditate distinctio eius delectus officia in ad quaerat praesentium illum.</p>
+
+                                <div class="flex items-center justify-center gap-2">
+                                    <span class="font-bold text-xl">Verdana Doe</span>
+                                    <span>Lorem ipsum dolor.</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="space-y-8 text-gray-300">
+                                <p class="text-2xl leading-loose">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nam cupiditate distinctio eius delectus officia</p>
+
+                                <div class="flex items-center justify-center gap-2">
+                                    <span class="font-bold text-xl">Micho Doe</span>
+                                    <span>Lorem ipsum dolor.</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script >
+  document.addEventListener( 'DOMContentLoaded', function() {
+    let testimoni = new Splide( '#testimonial' ,{
+        type: 'loop',
+        arrows: false,
+        autoplay: true,
+        interval: 3000,
+        classes: {
+            // Add classes for pagination.
+            pagination: 'splide__pagination relative mt-8', // container
+            page      : 'splide__pagination__page bg-gray-900', // each button
+        },
+    });
+    testimoni.mount();
+  } );
+</script>

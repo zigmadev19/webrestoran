@@ -1,0 +1,66 @@
+---
+import { getImage } from "astro:assets";
+import footerBg from "../images/footer-open-hour-bg.jpg"
+
+const backgroundFooter = await getImage({src: footerBg, format: 'webp'})
+
+//icon
+import Fb from '../icon/Fb.astro';
+import Tw from '../icon/Tw.astro';
+import Ig from '../icon/Ig.astro';
+import Google from '../icon/Google.astro';
+---
+
+<footer>
+    <hr />
+    <div class="max-w-6xl px-4 mx-auto py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="space-y-6 pt-8">
+            <h2 class="font-bold text-xl">Find us</h2>
+            <p>123 nulla a cursus rhoncus,augue sem viverra 10870id ultricies sapien</p>
+        </div>
+
+        <div class="space-y-6 pt-8">
+            <h2 class="font-bold text-xl">Reservation</h2>
+            <p>090-080-0650 | 090-070-0430</p>
+            <a class="hover:text-red-500" href="#top">restauran@company.com</a>
+            <br />
+            <a class="hover:text-red-500" href="#top">IG : Restauran_00</a>
+        </div>
+
+        <div
+        class="pl-8 py-8 border rounded-2xl bg-center text-white relative overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[rgba(0,0,0,.8)]"
+            style={`background-image: url(${backgroundFooter.src});`}
+        >
+            <div class="space-y-6 relative z-10">
+                <h2 class="font-bold text-xl">Open House</h2>
+
+                <div class="space-y-4">
+                    <h3 class="font-bold text-md">Monday: Closed</h3>
+                    <div>
+                        <h3 class="font-bold text-md">Tuesday to Friday</h3>
+                        <p>7:00 AM - 9:00 PM</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-md">Saturday - Sunday</h3>
+                        <p>11:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8">
+            <div class="flex gap-4 mb-4">
+                <a class="text-red-800 p-2 rounded-full hover:bg-red-500 hover:text-white" href="#top"><span class="sr-only">facebook</span><Fb /></a>
+                <a class="text-red-800 p-2 rounded-full hover:bg-red-500 hover:text-white" href="#top"><span class="sr-only">twitter</span><Tw /></a>
+                <a class="text-red-800 p-2 rounded-full hover:bg-red-500 hover:text-white" href="#top"><span class="sr-only">instagram</span><Ig /></a>
+                <a class="text-red-800 p-2 rounded-full hover:bg-red-500 hover:text-white" href="#top"><span class="sr-only">google</span><Google /></a>
+            </div>
+            <p>Copyright © 2018 Your Company Name</p>
+            <p>Design: TemplateMo</p>
+        </div>
+    </div>
+
+    <div class="text-center mb-8">
+        <p>Power By Astro & Tailwind</p>
+    </div>
+</footer>

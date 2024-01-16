@@ -1,0 +1,81 @@
+---
+import {Image} from 'astro:assets';
+
+import Menu1 from '../images/menu-image1.jpg';
+import Menu2 from '../images/menu-image2.jpg';
+import Menu3 from '../images/menu-image3.jpg';
+import Menu4 from '../images/menu-image4.jpg';
+import Menu5 from '../images/menu-image5.jpg';
+import Menu6 from '../images/menu-image6.jpg';
+---
+<section id="menu" class="py-32">
+<div class="max-w-6xl mx-auto px-4 space-y-16">
+    <div class="text-center text-gray-600 space-y-2">
+        <p class="text-xs tracking-widest">TEA TIME & DINING</p>
+        <h2 class="text-black font-bold text-3xl">Our Menus</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3">
+        <div class="relative text-white overflow-hidden group">
+            <Image class="group-hover:scale-110 ease-out duration-300" src={Menu1} alt="menu-1" />
+            <div class="flex justify-between py-8 px-4 absolute z-10 bottom-0 left-0 w-full bg-[rgba(0,0,0,.7)] translate-y-full group-hover:translate-y-0 ease-out duration-300">
+                <div class="font-bold">
+                    <h3 class="text-2xl">American Breakfast</h3>
+                    <div><span>Tomato /</span> <span>Eggs /</span> <span>Sausage</span></div>
+                </div>
+                <p class="font-bold text-2xl">$25</p>
+            </div>
+        </div>
+        <div class="relative text-white overflow-hidden group">
+            <Image class="group-hover:scale-110 ease-out duration-300" src={Menu2} alt="menu-2" />
+            <div class="flex justify-between py-8 px-4 absolute z-10 bottom-0 left-0 w-full bg-[rgba(0,0,0,.7)] translate-y-full group-hover:translate-y-0 ease-out duration-300">
+                <div class="font-bold">
+                    <h3 class="text-2xl">Salad</h3>
+                    <div><span>Fruits /</span> <span>Greens /</span> <span>Healty</span></div>
+                </div>
+                <p class="font-bold text-2xl">$25</p>
+            </div>
+        </div>
+        <div class="relative text-white overflow-hidden group">
+            <Image class="group-hover:scale-110 ease-out duration-300" src={Menu3} alt="menu-3" />
+            <div class="flex justify-between py-8 px-4 absolute z-10 bottom-0 left-0 w-full bg-[rgba(0,0,0,.7)] translate-y-full group-hover:translate-y-0 ease-out duration-300">
+                <div class="font-bold">
+                    <h3 class="text-2xl">Chinese Noodle</h3>
+                    <div><span>Pepper /</span> <span>Chicken /</span> <span>Vegetables</span></div>
+                </div>
+                <p class="font-bold text-2xl">$25</p>
+            </div>
+        </div>
+        <div class="relative text-white overflow-hidden group">
+            <Image class="group-hover:scale-110 ease-out duration-300" src={Menu4} alt="menu-4" />
+            <div class="flex justify-between py-8 px-4 absolute z-10 bottom-0 left-0 w-full bg-[rgba(0,0,0,.7)] translate-y-full group-hover:translate-y-0 ease-out duration-300">
+                <div class="font-bold">
+                    <h3 class="text-2xl">Rice Soup</h3>
+                    <div><span>Greens /</span> <span>Chicken</span></div>
+                </div>
+                <p class="font-bold text-2xl">$25</p>
+            </div>
+        </div>
+        <div class="relative text-white overflow-hidden group">
+            <Image class="group-hover:scale-110 ease-out duration-300" src={Menu5} alt="menu-5" />
+            <div class="flex justify-between py-8 px-4 absolute z-10 bottom-0 left-0 w-full bg-[rgba(0,0,0,.7)] translate-y-full group-hover:translate-y-0 ease-out duration-300">
+                <div class="font-bold">
+                    <h3 class="text-2xl">Delli Burger</h3>
+                    <div><span>Beef /</span> <span>Fried Potatoes</span></div>
+                </div>
+                <p class="font-bold text-2xl">$25</p>
+            </div>
+        </div>
+        <div class="relative text-white overflow-hidden group">
+            <Image class="group-hover:scale-110 ease-out duration-300" src={Menu6} alt="menu-6" />
+            <div class="flex justify-between py-8 px-4 absolute z-10 bottom-0 left-0 w-full bg-[rgba(0,0,0,.7)] translate-y-full group-hover:translate-y-0 ease-out duration-300">
+                <div class="font-bold">
+                    <h3 class="text-2xl">Big Flat Fried</h3>
+                    <div><span>Pepper /</span> <span>Crispy</span></div>
+                </div>
+                <p class="font-bold text-2xl">$25</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
